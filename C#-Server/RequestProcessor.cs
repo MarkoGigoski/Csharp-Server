@@ -9,17 +9,18 @@ namespace C__Server
 
         public static bool IsRequestValid(string request)
         {
-            var requestLines = request.Split(Environment.NewLine);
+            var requestLines = request.Split(Environment.NewLine);// Does Environment.NewLine splits the string word by word and place them in array?
             if (requestLines.Length == 0)
             {
                 return false;
             }
 
-            var match = requestLineRegex.Match(requestLines[0]);
+            var match = requestLineRegex.Match(requestLines[0]); //If the method its not the first chek? and we extract it down below as [1], then what is the first match chek up?
             if (!match.Success)
             {
                 return false;
             }
+
             var method = match.Groups[1].Value;
             var uri = match.Groups[2].Value;
             Console.WriteLine($"{method} {uri}");

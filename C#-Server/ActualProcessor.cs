@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using RestSharp;
-
-namespace C__Server
+﻿namespace C__Server
 {
     internal class ActualProcessor
     {
@@ -11,7 +8,9 @@ namespace C__Server
             {
 
             }
+
             return null;
+            
         }
     }
 }

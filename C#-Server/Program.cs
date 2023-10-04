@@ -18,7 +18,7 @@ while (true)
     using var stream = client.GetStream();
     byte[] buffer = new byte[8192];
     Span<byte> bytes = new(buffer);
-    var byteCount = stream.Read(bytes);
+    var byteCount = stream.Read(bytes); //Why do we use this: stream.Read(bytes), and then decode them the as the same and not the read version byteCount, is it only to see them as example?
     Console.WriteLine(byteCount);
     var requestString = Encoding.UTF8.GetString(bytes);
 
